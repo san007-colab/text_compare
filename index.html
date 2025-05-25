@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOCX vs HTML Comparison</title>
+</head>
+<body>
+    <h1>Compare DOCX and HTML Files</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Select DOCX Files:</label><br>
+        <input type="file" name="docx_files" multiple required><br><br>
+        <label>Select HTML Files:</label><br>
+        <input type="file" name="html_files" multiple required><br><br>
+        <button type="submit">Compare</button>
+    </form>
+
+    {% if report_links %}
+        <h2>Comparison Reports:</h2>
+        <ul>
+        {% for name, url in report_links %}
+            <li><a href="{{ url }}" target="_blank">{{ name }}</a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

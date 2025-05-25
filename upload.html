@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Files</title>
+</head>
+<body>
+    <h1>Upload DOCX and HTML files (matching names)</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label>DOCX files:</label><br>
+        <input type="file" name="docx_files" multiple required><br><br>
+        <label>HTML files:</label><br>
+        <input type="file" name="html_files" multiple required><br><br>
+        <button type="submit">Compare</button>
+    </form>
+</body>
+</html>

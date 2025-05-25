@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comparison for {{ filename }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 10px; vertical-align: top; }
+        th { background-color: #f4f4f4; }
+        .case-diff { background-color: #ffecb3; font-weight: bold; }
+        .decimal-diff { background-color: #b3e5fc; font-weight: bold; }
+        .diff { background-color: #ffcdd2; font-weight: bold; }
+        .missing { background-color: #f8bbd0; font-weight: bold; }
+        .extra { background-color: #E6E6FA; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Comparison for {{ filename }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>DOCX Text</th>
+                <th>HTML Text</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for doc_sent, html_sent, is_missing in pairs %}
+            <tr>
+                <td style="background-color: {{ 'pink' if is_missing else 'white' }};">{{ doc_sent | safe }}</td>
+                <td>{{ html_sent | safe }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{{ url_for('index') }}">Back to upload</a>
+</body>
+</html>

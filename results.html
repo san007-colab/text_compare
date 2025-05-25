@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comparison Results</title>
+</head>
+<body>
+    <h1>Comparison Results</h1>
+    <ul>
+        {% for result in results %}
+            <li><a href="{{ result.url }}" target="_blank">{{ result.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Upload more files</a>
+</body>
+</html>
